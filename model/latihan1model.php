@@ -1,7 +1,7 @@
 <?php
 class latihan1model
 {
-    public function getAllMhs()
+    public function getDataMhs()
     {
         return [
             ['nama' => 'Fakhril', 'nim' => '3022501'],
