@@ -13,6 +13,8 @@
         <th>NO.</th>
         <th>NIM</th>
         <th>NAMA MAHASISWA</th>
+        <th>ALAMAT</th>
+        <th>NO.TELP</th>
     </tr>
 
     <?php
@@ -24,6 +26,8 @@
             <td><?= $i++; ?>.</td>
             <td><?= $mhs['nim']; ?></td>
             <td><?= $mhs['nama']; ?></td>
+            <td><?= $mhs['alamat']; ?></td>
+            <td><?= $mhs['no_hp']; ?></td>
         </tr>
     <?php
     }
