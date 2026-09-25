@@ -1,5 +1,5 @@
 <?php
-class Latihan1Model
+class latihan1model
 {
     public function getAllMhs()
     {
