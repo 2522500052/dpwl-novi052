@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Mahasiswa</title>
 </head>
+    <style>
+        body {
+            margin: 10px;
+            font-family: "Times New Roman", Times, serif;
+        }
+    h2 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+    }
+
+    table {
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    th, td {
+        border: 1px solid #999;
+        padding: 3px 6px;
+    }
+
+    th {
+        font-weight: bold;
+        text-align: left;
+    }
+</style>
 <body>
     <h2>Daftar Mahasiswa</h2>
 <table>
