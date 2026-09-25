@@ -1,3 +1,3 @@
 <?php
-$route[default_controller] = "latihan1controller";
+$config['base_url'] = 'http://localhost/dpwl-novi052/';
 ?>
