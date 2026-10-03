@@ -1,5 +1,4 @@
 <?php
-require_once 'model/latihan1model.php';
 class latihan1controller{
     public function index()
     {
