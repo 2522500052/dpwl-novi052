@@ -1,0 +1,1 @@
+# core ganji 2026 #
