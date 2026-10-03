@@ -10,4 +10,4 @@ sql_autoload_register(function ($namacontroller) {
         }
     }
     echo "Class '$namacontroller' tidak ditemukan.";
-}); s
+}); 
