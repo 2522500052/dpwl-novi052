@@ -1,9 +1,9 @@
 <?php
-class latihan1controller{
+class latihan1controller extends controller
+{
     public function index()
     {
-        $model = new latihan1model();
-        $data = $model->getDataMhs();
-        include 'view/latihan1view.php';}
-}
+        $data['datamhs'] = $this->load->model('latihan1model')->getDataMhs();
+        $this->load->view('latihan1view', $data);
+    }}
 ?>

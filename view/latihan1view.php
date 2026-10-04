@@ -41,11 +41,10 @@
         <th>ALAMAT</th>
         <th>NO.TELP</th>
     </tr>
-
     <?php
     $i = 1;
 
-    foreach ($data as $mhs) {
+    foreach ($datamhs as $mhs) {
     ?>
         <tr>
             <td><?= $i++; ?>.</td>
