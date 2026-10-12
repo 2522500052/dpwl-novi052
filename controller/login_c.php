@@ -6,8 +6,10 @@ class login_c extends controller
         $this->load->view('login');
     }
 
-    public function ceklogin()
-    {
-        // Login logic here
-    }
+public function ceklogin()
+{
+    $email = $_POST['email'];
+    $password = $_POST['pass'];
+    echo "Email " . $email . " dan " . $password . " Password Anda";
+}
 }
