@@ -5,4 +5,9 @@ class login_c extends controller
     {
         $this->load->view('login');
     }
+
+    public function ceklogin()
+    {
+        // Login logic here
+    }
 }
