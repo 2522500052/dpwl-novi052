@@ -1,23 +1,23 @@
 <?php
-class login_c extends controller
+class login_c extends Controller
 {
     public function index()
     {
-        $this->load->view('login');
+        $isipsn['psn'] = $this->session->set_flashdata('pesan');
+        $this->load->view('login', $isipsn);
     }
-
-public function ceklogin()
-{
-    $email = $_POST['email'];
-    $password = $_POST['pass'];
-    $cekdata = $this->load->model('login_m');
-    $datauser = $cekdata->ambildata($email);
-    if ($datauser && password_verify($password, $datauser['password'])) {
-    $this->session->set_userdata('emailuser', $email);
-        echo '<script>alert("Login berhasil sebagai ' . $this->session->userdata('emailuser') . '");</script>';
-    } else {
-        echo '<script>alert("Gagal: Silahkan cek email, password, atau status akun Anda...");</script>';
-    }
-}
-    
+    public function ceklogin()
+    {
+        $email = $this->load->post('email');
+        $password = $this->load->post('pass');
+        $cekdata = $this->load->model('login_m');
+        $datauser = $cekdata->ambildata($email);
+        if ($datauser && password_verify($password, $datauser['password'])) {    
+        #if ($datauser && $password === $datauser['password']) {
+            $this->session->set_userdata('emailuser', $email);
+            echo '<script>alert("Login berhasil sebagai ' . $this->session->userdata('emailuser') . '");</script>';
+        } else {
+            echo '<script>alert("Gagal: silahkan cek email, password, atau status akun Anda...");</script>';
+        }
+    } 
 }
