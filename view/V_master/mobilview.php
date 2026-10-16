@@ -25,6 +25,7 @@
           <div class="col-lg-6">
             <div class="card">
               <div class="card-body">
+            
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
