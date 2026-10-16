@@ -1,0 +1,13 @@
+<?php 
+class Mobil_C extends controller
+{
+    public function index()
+    {
+        $cekdata = $this->load->model('m_master/mobil_M');
+        $data['dtmobil'] = $cekdata->datamobil();
+        $this->load->view('layout/header');
+        $this->load->view('layout/sidebar');
+        $this->load->view('v_master/mobilview', $dt);
+        $this->load->view('layout/footer');
+    }
+}
