@@ -1,5 +1,5 @@
 <?php
-class login_c extends controller
+class Login_C extends Controller
 {
     public function index()
     {
@@ -16,10 +16,10 @@ class login_c extends controller
         if ($datauser && $password === $datauser['password']) {
             $this->session->set_userdata('emailuser', $email);
             $this->session->set_flashdata('pesan', "Login berhasil sebagai " . $this->session->userdata('emailuser'));
-            redirect('admin_c/index');
+            redirect('Admin_C/index');
         } else {
             $this->session->set_flashdata('pesan', 'Gagal: silahkan cek email, password, atau status akun Anda...');
-            redirect('login_c/index');
+            redirect('Login_C/index');
         }
     } 
 }

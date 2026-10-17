@@ -1,9 +1,9 @@
 <?php 
-class controller
+class Controller
 {
     public function __construct()
     {
-        $this->session = new session();
+        $this->session = new Session();
         $this->load = new class {
             public function view($viewName, $data = [])
             { if (!empty($data)) {
@@ -17,7 +17,7 @@ class controller
                 $modelName = basename($modelName);
                 return new $modelName();
             }
-                        public function post($key = null)
+            public function post($key = null)
             {
                 if ($key === null) {
                     return $_POST;

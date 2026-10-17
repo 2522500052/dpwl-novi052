@@ -5,11 +5,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Starter Page</h1>
+            <h1 class="m-0">Starter Page Novi</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?= base_url('Admin_C/index') ?>">Home</a></li>
               <li class="breadcrumb-item active">Starter Page</li>
             </ol>
           </div><!-- /.col -->
@@ -22,10 +22,11 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-            
+                <a href="<?= base_url('Mobil_C/create_mobil') ?>" 
+                class="btn btn-primary mb-3">Tambah Data</a>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -33,7 +34,7 @@
                             <th>Nama Mobil</th>
                             <th>Jumlah Kursi</th>
                             <th>Jumlah Bagasi</th>
-                            <th>Jenis Mobil/<br>Tranmisi</th>
+                            <th>Jenis Mobil/<br>Transmisi</th>
                             <th>Tahun</th>
                             <th>Foto</th>
                             <th>Biaya Perhari</th>
@@ -43,32 +44,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach (dtmobil as $m)
-                        <tr>
-                    <td><?= $m['no_plat'] ?></td>
-                    <td><?= $m['nm_mobil'] ?></td>
-                    <td><?= $m['nkursi'] ?></td>
-                    <td><?= $m['nbagasi'] ?></td>
-                    <td><?= $m['jns_mobil'] . '/<br>' . $m['transmisi'] ?></td>
-                    <td><?= $m['thn_buat'] ?></td>
-                    <td><?= $m['ft_depan'] . '<br>' . $m['ft_blkg'] . '<br>' . $m['ft_interior'] ?></td>
-                    <td><?= $m['hrg_hari'] ?></td>
-                    <td><?= $m['cttn_unit'] ?></td>
-                    <td><?= $m['status_unit'] ?></td>
-                    <td>
-                        <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-                        <!-- Data mobil-->
+                        <?php foreach ($datamobil as $m) : ?>
+                            <tr>
+                                <td><?= $m['no_plat'] ?></td>
+                                <td><?= $m['nm_mobil'] ?></td>
+                                <td><?= $m['nkursi'] ?></td>
+                                <td><?= $m['nbagasi'] ?></td>
+                                <td><?= $m['jns_mobil'] . '<br>' . $m['transmisi'] ?></td>
+                                <td><?= $m['thn_buat'] ?></td>
+                                <td><?= $m['ft_depan'] . '<br>' . $m['ft_blkng'] . '<br>' . $m['ft_interior'] ?></td>
+                                <td><?= $m['hrg_hari'] ?></td>
+                                <td><?= $m['cttn_unit'] ?></td>
+                                <td><?= $m['status_unit'] ?></td>
+                                <td>
+                                    <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <!-- Data mobil -->
                     </tbody>
                 </table>
-
               </div>
             </div>
+          </div>
           <!-- /.col-md-6 -->
-        </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -85,5 +85,3 @@
     </div>
   </aside>
   <!-- /.control-sidebar -->
-
-  
