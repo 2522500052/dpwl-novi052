@@ -5,7 +5,7 @@ class Controller
     {
         $this->session = new Session();
         $this->load = new class {
-            public function view($viewName, $data = [])
+            public function view($viewName, $data =  [])
             { if (!empty($data)) {
                     extract($data);
                 }
@@ -18,7 +18,7 @@ class Controller
                 return new $modelName();
             }
             public function post($key = null)
-            {
+            {   
                 if ($key === null) {
                     return $_POST;
                 }
