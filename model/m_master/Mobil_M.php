@@ -31,4 +31,54 @@ public function simpan($data)
     return $sql->execute();
 }
 
+public function detailmobil($no_plat)
+{
+    $sql = $this->db->prepare(
+        "SELECT no_plat, nm_mobil, nkursi, nbagasi, jns_mobil,
+            transmisi, thn_buat, ft_depan, ft_blkng,
+            ft_interior, hrg_hari, cttn_unit, status_unit
+        FROM mobil
+        WHERE no_plat = ?"
+    );
+
+    $sql->bind_param("s", $no_plat);
+    $sql->execute();
+
+    return $sql->get_result()->fetch_assoc();
+}
+public function UbahDtMobil($data)
+{
+    $sql = $this->db->prepare(
+        "UPDATE mobil SET nm_mobil = ?, nkursi = ?, nbagasi = ?, jns_mobil = ?, 
+        transmisi = ?, thn_buat = ?, ft_depan = ?, ft_blkng = ?, ft_interior = ?, 
+        hrg_hari = ?, cttn_unit = ?, status_unit = ? WHERE no_plat = ?"
+    );
+
+    $sql->bind_param(
+        "siississsdsss",
+        $data['nm_mobil'],
+        $data['nkursi'],
+        $data['nbagasi'],
+        $data['jns_mobil'],
+        $data['transmisi'],
+        $data['thn_buat'],
+        $data['ft_depan'],
+        $data['ft_blkng'],
+        $data['ft_interior'],
+        $data['hrg_hari'],
+        $data['cttn_unit'],
+        $data['status_unit'],
+        $data['no_plat']
+    );
+
+    return $sql->execute();
+}
+public function HapusDtMobil($no_plat)
+{
+    $dtmobil = $this->db->prepare("DELETE FROM mobil WHERE no_plat = ?");
+    $dtmobil->bind_param("s", $no_plat);
+    $hasil = $dtmobil->execute();
+    $dtmobil->close();
+    return $hasil;
+}
 }

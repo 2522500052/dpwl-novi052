@@ -8,6 +8,6 @@ spl_autoload_register(function ($namacontroller) {
             require_once $file;
             return;}
     }
-    echo "Class '$namacontroller' tidak ditemukan.";
+    echo "Class '$namacontroller' tidak ditemukan. File yang dicari: " . $namacontroller . ".php";
 });
 ?>
