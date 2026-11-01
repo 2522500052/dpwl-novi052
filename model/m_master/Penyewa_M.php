@@ -1,18 +1,18 @@
 <?php
-class Mobil_M extends Model
+class Penyewa_M extends Model
 {
-    function datamobil()
+    function datapenyewa()
     {
-        $dtmobil = $this->db->prepare("SELECT no_plat, nm_mobil, nkursi, nbagasi, jns_mobil, transmisi,
-        thn_buat, ft_depan, ft_blkg, ft_interior, hrg_hari, cttn_unit, status_unit FROM mobil");
-        $dtmobil->execute();
-        return $dtmobil->get_result()->fetch_all(MYSQLI_ASSOC);
+        $dtpenyewa = $this->db->prepare("SELECT user_plg, sandi, nik, nm_lngkp, no_hp, almt_lngkp,
+        ft_ktp, ft_sim_a, FROM penyewa");
+        $dtpenyewa->execute();
+        return $dtpenyewa->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function cekplat($no_plat)
+    public function cekplat($user_plg)
 {
-    $sql = $this->db->prepare("SELECT no_plat FROM mobil WHERE no_plat = ? ");
-    $sql->bind_param("s", $no_plat);
+    $sql = $this->db->prepare("SELECT user_plg FROM penyewa WHERE user_plg = ? ");
+    $sql->bind_param("s", $user_plg);
     $sql->execute();
     $hasil = $sql->get_result();
     return $hasil->num_rows > 0;
@@ -20,65 +20,56 @@ class Mobil_M extends Model
 
 public function simpan($data)
 {
-    $sql = $this->db->prepare("INSERT INTO mobil (no_plat,nm_mobil,nkursi,nbagasi,
-    jns_mobil,transmisi,thn_buat,ft_depan,ft_blkg,ft_interior,hrg_hari,cttn_unit,
-    status_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $sql = $this->db->prepare("INSERT INTO penyewa (user_plg,sandi,nik,nm_lngkp,
+    no_hp,almt_lngkp,ft_ktp,ft_sim_a) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    $sql->bind_param("ssiississsdss", $data['no_plat'], $data['nm_mobil'], $data['nkursi'], 
-    $data['nbagasi'], $data['jns_mobil'], $data['transmisi'], $data['thn_buat'], 
-    $data['ft_depan'], $data['ft_blkg'], $data['ft_interior'], $data['hrg_hari'], 
-    $data['cttn_unit'], $data['status_unit']);
+    $sql->bind_param("ssiississsdss", $data['user_plg'], $data['sandi'], $data['nik'], 
+    $data['nm_lngkp'], $data['no_hp'], $data['almt_lngkp'], $data['ft_ktp'], 
+    $data['ft_sim_a']);
     return $sql->execute();
 }
 
-public function detailmobil($no_plat)
+public function detailpenyewa($user_plg)
 {
     $sql = $this->db->prepare(
-        "SELECT no_plat, nm_mobil, nkursi, nbagasi, jns_mobil,
-            transmisi, thn_buat, ft_depan, ft_blkng,
-            ft_interior, hrg_hari, cttn_unit, status_unit
-        FROM mobil
-        WHERE no_plat = ?"
+        "SELECT user_plg, sandi, nik, nm_lngkp, no_hp,
+            almt_lngkp, ft_ktp, ft_sim_a
+        FROM penyewa
+        WHERE nuser_plg = ?"
     );
 
-    $sql->bind_param("s", $no_plat);
+    $sql->bind_param("s", $user_plg);
     $sql->execute();
 
     return $sql->get_result()->fetch_assoc();
 }
-public function UbahDtMobil($data)
+public function UbahDtPenyewa($data)
 {
     $sql = $this->db->prepare(
-        "UPDATE mobil SET nm_mobil = ?, nkursi = ?, nbagasi = ?, jns_mobil = ?, 
-        transmisi = ?, thn_buat = ?, ft_depan = ?, ft_blkng = ?, ft_interior = ?, 
-        hrg_hari = ?, cttn_unit = ?, status_unit = ? WHERE no_plat = ?"
+        "UPDATE penyewa SET sandi = ?, nik = ?, nm_lngkp = ?, no_hp = ?, 
+        almt_lngkp = ?, ft_ktp = ?, ft_sim_a = ? WHERE user_plg = ?"
     );
 
     $sql->bind_param(
         "siississsdsss",
-        $data['nm_mobil'],
-        $data['nkursi'],
-        $data['nbagasi'],
-        $data['jns_mobil'],
-        $data['transmisi'],
-        $data['thn_buat'],
-        $data['ft_depan'],
-        $data['ft_blkng'],
-        $data['ft_interior'],
-        $data['hrg_hari'],
-        $data['cttn_unit'],
-        $data['status_unit'],
-        $data['no_plat']
+        $data['sandi'],
+        $data['nik'],
+        $data['nm_lngkp'],
+        $data['no_hp'],
+        $data['almt_lngkp'],
+        $data['ft_ktp'],
+        $data['ft_sim_a'],
+        $data['user_plg']
     );
 
     return $sql->execute();
 }
-public function HapusDtMobil($no_plat)
+public function HapusDtpenyewa($user_plg)
 {
-    $dtmobil = $this->db->prepare("DELETE FROM mobil WHERE no_plat = ?");
-    $dtmobil->bind_param("s", $no_plat);
-    $hasil = $dtmobil->execute();
-    $dtmobil->close();
+    $dtpenyewa = $this->db->prepare("DELETE FROM penyewa WHERE user_plg = ?");
+    $dtpenyewa->bind_param("s", $user_plg);
+    $hasil = $dtpenyewa->execute();
+    $dtpenyewa->close();
     return $hasil;
 }
 }
