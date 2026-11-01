@@ -156,13 +156,8 @@ public function UpdatePenyewa()
         'nm_lngkp' => $this->load->post('nm_lngkp'),
         'no_hp' => $this->load->post('no_hp'),
         'almt_lngkp' => $this->load->post('almt_lngkp'),
-<<<<<<< HEAD
         'ft_ktp' => $ft_ktp,
         'ft_sim_a' => $ft_sim_a
-=======
-        'ft_ktp' => $this->load->post('ft_ktp'),
-        'ft_sim_a' => $this->load->post('ft_sim_a'),
->>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
         
     ];
 
@@ -208,8 +203,4 @@ public function UpdatePenyewa()
     redirect('login_C/index');
     exit;
 }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71

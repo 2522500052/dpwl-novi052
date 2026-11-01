@@ -8,7 +8,6 @@ class Mobil_M extends Model
         $dtmobil->execute();
         return $dtmobil->get_result()->fetch_all(MYSQLI_ASSOC);
     }
-
     public function cekplat($no_plat)
 {
     $sql = $this->db->prepare("SELECT no_plat FROM mobil WHERE no_plat = ? ");
