@@ -7,7 +7,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+<<<<<<< HEAD
                     <h1 class="m-0">Starter Page Novi - Entri Data Mobil</h1>
+=======
+                    <h1 class="m-0">Starter Page Novi - Entri Data Penyewa</h1>
+>>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -15,9 +19,15 @@
                             <a href="<?= base_url('Admin_C/index') ?>">Home</a>
                         </li>
                         <li class="breadcrumb-item">
+<<<<<<< HEAD
                             <a href="<?= base_url('Penyewa_C/index') ?>">Data Mobil</a>
                         </li>
                         <li class="breadcrumb-item active">Entri Mobil</li>
+=======
+                            <a href="<?= base_url('Penyewa_C/index') ?>">Data Penyewa</a>
+                        </li>
+                        <li class="breadcrumb-item active">Entri Penyewa</li>
+>>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
                     </ol>
                 </div>
             </div>
@@ -42,10 +52,17 @@
                             <div class="card-body">
 
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <label for="user_plg">Username</label>
                                     <input type="text" name="user_plg"
                                            id="user_plg" class="form-control"
                                            placeholder="Masukkan username"
+=======
+                                    <label for="user_plg">User Pelanggan</label>
+                                    <input type="text" name="user_plg"
+                                           id="user_plg" class="form-control"
+                                           placeholder="Masukkan user pelanggan"
+>>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
                                            required>
                                 </div>
 
@@ -60,7 +77,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
+<<<<<<< HEAD
                                             <label for="nik">Nik</label>
+=======
+                                            <label for="nik">NIK</label>
+>>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
                                             <input type="text" name="nik"
                                                    id="nik" class="form-control"
                                                    placeholder="Masukkan nik"
@@ -85,14 +106,22 @@
                                             <label for="no_hp">Nomor HP</label>
                                             <input type="text" name="no_hp"
                                                    id="no_hp" class="form-control"
+<<<<<<< HEAD
                                                    placeholder="Masukkan nomor HP"
+=======
+                                                   placeholder="Masukkan nomor hp"
+>>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
                                                    required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
+<<<<<<< HEAD
                                             <label for="almt_lngkp">Alamat</label>
+=======
+                                            <label for="almt_lngkp">Alamat Lengkap</label>
+>>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
                                             <input type="text" name="almt_lngkp"
                                                    id="almt_lngkp" class="form-control"
                                                    placeholder="Masukkan alamat lengkap"
@@ -104,7 +133,11 @@
                                 <div class="form-group">
                                     <label for="ft_ktp">Foto KTP</label>
                                     <input type="file" name="ft_ktp"
+<<<<<<< HEAD
                                            id="ft_ktp" class="form-control"
+=======
+                                           id="ft_ktp class="form-control"
+>>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
                                            accept="image/*" required>
                                 </div>
 
@@ -114,7 +147,11 @@
                                            id="ft_sim_a" class="form-control"
                                            accept="image/*" required>
                                 </div>
+<<<<<<< HEAD
                             </div>
+=======
+
+>>>>>>> 053bf9e032e675df901f9e340624bd97bb843b71
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">
