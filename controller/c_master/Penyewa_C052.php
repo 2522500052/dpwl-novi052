@@ -21,15 +21,15 @@ class Penyewa_C extends Controller
     public function simpan()
     {
         $penyewa = $this->load->model('m_master/Penyewa_M');
-        if ($penyewa->cekpenyewa($this->load->post('user_plg'))) {
+        if ($penyewa->cekpenyewa($this->load->post('user_plg052'))) {
             echo "<script>
             alert('Nomor user sudah terdaftar!');
             window.history.back();
             </script>";
             exit;
         }
-        $ft_ktp    = 'ktp' . $this->load->post('user_plg');
-        $ft_sim_a    = 'sim_a' . $this->load->post('user_plg');
+        $ft_ktp    = 'ktp' . $this->load->post('user_plg052');
+        $ft_sim_a    = 'sim_a' . $this->load->post('user_plg052');
         $folder = dirname(__DIR__, 2) . '/img/';
         if (isset($_FILES['ft_ktp']) && $_FILES['ft_ktp']['error'] == 0) {
             $file = $_FILES['ft_ktp'];
@@ -59,12 +59,12 @@ class Penyewa_C extends Controller
         }
         
         $data = [
-            'user_plg'    => $this->load->post('user_plg'),
-            'sandi'   => $this->load->post('sandi'),
-            'nik'     => $this->load->post('nik'),
-            'nm_lngkp'    => $this->load->post('nm_lngkp'),
-            'no_hp'  => $this->load->post('no_hp'),
-            'almt_lngkp'  => $this->load->post('almt_lngkp'),
+            'user_plg052'    => $this->load->post('user_plg052'),
+            'Sandi052'   => $this->load->post('Sandi052'),
+            'Nik052'     => $this->load->post('Nik052'),
+            'nm_lngkp052'    => $this->load->post('nm_lngkp052'),
+            'no_hp052'  => $this->load->post('no_hp052'),
+            'almt_lngkp052'  => $this->load->post('almt_lngkp052'),
             'ft_ktp'  => $this->load->post('ft_ktp'),
             'ft_sim_a'  => $this->load->post('ft_sim_a'),
             
@@ -84,11 +84,11 @@ class Penyewa_C extends Controller
         </script>";
         }
     }
-    public function edit($user_plg)
+    public function edit($user_plg052)
     {
         $info['nm_user'] = explode('@', $this->session->userdata('emailuser'))[0];
         $penyewa = $this->load->model('m_master/Penyewa_M');
-        $dt['penyewa'] = $penyewa->detailpenyewa($user_plg);
+        $dt['penyewa'] = $penyewa->detailpenyewa($user_plg052);
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar', $info);
         $this->load->view('v_master/update_penyewaview', $dt);
@@ -99,7 +99,7 @@ public function UpdatePenyewa()
 {
     $penyewa = $this->load->model('m_master/Penyewa_M');
 
-    $ft_ktp = 'KTP' . $this->load->post('user_plg');
+    $ft_ktp = 'KTP' . $this->load->post('user_plg052');
     $ft_ktp_asli = $this->load->post('ft_ktp_asli');
 
     if (isset($_FILES['ft_ktp']) && $_FILES['ft_ktp']['error'] != 4) {
@@ -124,7 +124,7 @@ public function UpdatePenyewa()
         $ft_ktp = $ft_ktp_asli;
     }
 
-    $ft_sim_a = 'sim_a' . $this->load->post('user_plg');
+    $ft_sim_a = 'sim_a' . $this->load->post('user_plg052');
     $ft_sim_a_asli = $this->load->post('ft_sim_a_asli');
 
     if (isset($_FILES['ft_sim_a']) && $_FILES['ft_sim_a']['error'] != 4) {
@@ -150,12 +150,12 @@ public function UpdatePenyewa()
     }
 
     $data = [
-        'user_plg' => $this->load->post('user_plg'),
-        'sandi' => $this->load->post('sandi'),
-        'nik' => $this->load->post('nik'),
-        'nm_lngkp' => $this->load->post('nm_lngkp'),
-        'no_hp' => $this->load->post('no_hp'),
-        'almt_lngkp' => $this->load->post('almt_lngkp'),
+        'user_plg052' => $this->load->post('user_plg052'),
+        'Sandi052' => $this->load->post('Sandi052'),
+        'Nik052' => $this->load->post('Nik052'),
+        'nm_lngkp052' => $this->load->post('nm_lngkp052'),
+        'no_hp052' => $this->load->post('no_hp052'),
+        'almt_lngkp052' => $this->load->post('almt_lngkp052'),
         'ft_ktp' => $ft_ktp,
         'ft_sim_a' => $ft_sim_a
         
@@ -174,13 +174,13 @@ public function UpdatePenyewa()
     }
 }
 
-    public function hapus($user_plg)
+    public function hapus($user_plg052)
     {
         $penyewa = $this->load->model('m_master/Penyewa_M');
-        $dt['Gambar_Penyewa'] = $penyewa->detailpenyewa($user_plg);
+        $dt['Gambar_Penyewa'] = $penyewa->detailpenyewa($user_plg052);
         $ft_ktp = $dt['Gambar_Penyewa']['ft_ktp'];
         $ft_sim_a = $dt['Gambar_Penyewa']['ft_sim_a'];
-        $hapus = $penyewa->HapusDtpenyewa($user_plg);
+        $hapus = $penyewa->HapusDtpenyewa($user_plg052);
         if ($hapus) {
             $folder = dirname(__DIR__, 2) . '/img/';
             $gambar = [$ft_ktp, $ft_sim_a];
