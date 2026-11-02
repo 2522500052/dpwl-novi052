@@ -15,7 +15,7 @@
                             <a href="<?= base_url('Admin_C/index') ?>">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="<?= base_url('Penyewa_C/index') ?>">Data Penyewa</a>
+                            <a href="<?= base_url('Penyewa_C052/index') ?>">Data Penyewa</a>
                         </li>
                         <li class="breadcrumb-item active">Entri Penyewa</li>
 
@@ -36,21 +36,21 @@
                             <h3 class="card-title">Form Entri Data Penyewa</h3>
                         </div>
 
-                        <form action="<?= base_url('Penyewa_C/simpan') ?>"
+                        <form action="<?= base_url('Penyewa_C052/simpan') ?>"
                               method="post"
                               enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="user_plg">User Pelanggan</label>
-                                    <input type="text" name="user_plg"
-                                           id="user_plg" class="form-control"
+                                    <label for="user_plg052">User Pelanggan</label>
+                                    <input type="text" name="user_plg052"
+                                           id="user_plg052" class="form-control"
                                            placeholder="Masukkan user pelanggan"
                                            required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="sandi">Sandi</label>
-                                    <input type="text" name="sandi"
-                                           id="sandi" class="form-control"
+                                    <label for="Sandi052">Sandi</label>
+                                    <input type="text" name="Sandi052"
+                                           id="Sandi052" class="form-control"
                                            placeholder="Masukkan sandi"
                                            required>
                                 </div>
@@ -59,10 +59,9 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
 
-                                            <label for="nik">NIK</label>
-
-                                            <input type="text" name="nik"
-                                                   id="nik" class="form-control"
+                                            <label for="Nik052">NIK</label>
+                                            <input type="text" name="Nik052"
+                                                   id="Nik052" class="form-control"
                                                    placeholder="Masukkan nik"
                                                    required>
                                         </div>
@@ -70,9 +69,9 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="nm_lngkp">Nama Lengkap</label>
-                                            <input type="text" name="nm_lngkp"
-                                                   id="nm_lngkp" class="form-control"
+                                            <label for="nm_lngkp052">Nama Lengkap</label>
+                                            <input type="text" name="nm_lngkp052"
+                                                   id="nm_lngkp052" class="form-control"
                                                    placeholder="Masukkan nama lengkap"
                                                    required>
                                         </div>
@@ -82,9 +81,9 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="no_hp">Nomor HP</label>
-                                            <input type="text" name="no_hp"
-                                                   id="no_hp" class="form-control"
+                                            <label for="no_hp052">Nomor HP</label>
+                                            <input type="text" name="no_hp052"
+                                                   id="no_hp052" class="form-control"
 
                                                    placeholder="Masukkan nomor hp"
                                                    required>
@@ -93,9 +92,9 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="almt_lngkp">Alamat Lengkap</label>
-                                            <input type="text" name="almt_lngkp"
-                                                   id="almt_lngkp" class="form-control"
+                                            <label for="almt_lngkp052">Alamat Lengkap</label>
+                                            <input type="text" name="almt_lngkp052"
+                                                   id="almt_lngkp052" class="form-control"
                                                    placeholder="Masukkan alamat lengkap"
                                                    required>
                                         </div>

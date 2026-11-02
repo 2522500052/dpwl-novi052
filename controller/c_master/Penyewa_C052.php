@@ -1,13 +1,13 @@
 <?php
-class Penyewa_C extends Controller
+class Penyewa_C052 extends Controller
 {
     public function index()
     {
-        $cekdata = $this->load->model('m_master/Penyewa_M');
+        $cekdata = $this->load->model('m_master/Penyewa_M052');
         $dt['datapenyewa'] = $cekdata->datapenyewa();
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
-        $this->load->view('v_master/penyewaview', $dt);
+        $this->load->view('v_master/penyewaview052', $dt);
         $this->load->view('layout/footer');
     }
     public function create_penyewa()
@@ -15,12 +15,12 @@ class Penyewa_C extends Controller
         $info['nm_user'] = explode('@', $this->session->userdata('emailuser'))[0];
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar', $info);
-        $this->load->view('v_master/create_penyewaview');
+        $this->load->view('v_master/create_penyewaview052');
         $this->load->view('layout/footer');
     }
     public function simpan()
     {
-        $penyewa = $this->load->model('m_master/Penyewa_M');
+        $penyewa = $this->load->model('m_master/Penyewa_M052');
         if ($penyewa->cekpenyewa($this->load->post('user_plg052'))) {
             echo "<script>
             alert('Nomor user sudah terdaftar!');
@@ -75,7 +75,7 @@ class Penyewa_C extends Controller
         if ($simpan) {
             echo "<script>
         alert('Data penyewa berhasil disimpan!');
-        window.location.href = '" . base_url('Penyewa_C/index') . "';
+        window.location.href = '" . base_url('Penyewa_C052/index') . "';
         </script>";
         } else {
             echo "<script>
@@ -87,17 +87,17 @@ class Penyewa_C extends Controller
     public function edit($user_plg052)
     {
         $info['nm_user'] = explode('@', $this->session->userdata('emailuser'))[0];
-        $penyewa = $this->load->model('m_master/Penyewa_M');
+        $penyewa = $this->load->model('m_master/Penyewa_M052');
         $dt['penyewa'] = $penyewa->detailpenyewa($user_plg052);
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar', $info);
-        $this->load->view('v_master/update_penyewaview', $dt);
+        $this->load->view('v_master/update_penyewaview052', $dt);
         $this->load->view('layout/footer');
     }
     
 public function UpdatePenyewa()
 {
-    $penyewa = $this->load->model('m_master/Penyewa_M');
+    $penyewa = $this->load->model('m_master/Penyewa_M052');
 
     $ft_ktp = 'KTP' . $this->load->post('user_plg052');
     $ft_ktp_asli = $this->load->post('ft_ktp_asli');
@@ -165,7 +165,7 @@ public function UpdatePenyewa()
 
     if ($simpan) {
         echo "<script>alert('Data penyewa berhasil diubah!');";
-        echo "window.location.href = '" . base_url('Penyewa_C/index') . "';";
+        echo "window.location.href = '" . base_url('Penyewa_C052/index') . "';";
         echo "</script>";
     } else {
         echo "<script>alert('Data penyewa gagal diubah!');";
@@ -176,7 +176,7 @@ public function UpdatePenyewa()
 
     public function hapus($user_plg052)
     {
-        $penyewa = $this->load->model('m_master/Penyewa_M');
+        $penyewa = $this->load->model('m_master/Penyewa_M052');
         $dt['Gambar_Penyewa'] = $penyewa->detailpenyewa($user_plg052);
         $ft_ktp = $dt['Gambar_Penyewa']['ft_ktp'];
         $ft_sim_a = $dt['Gambar_Penyewa']['ft_sim_a'];
@@ -190,7 +190,7 @@ public function UpdatePenyewa()
                 }
             }
             echo "<script>alert('Data penyewa berhasil dihapus!');
-        window.location.href = '" . base_url('Penyewa_C/index') . "';
+        window.location.href = '" . base_url('Penyewa_C052/index') . "';
         </script>";
         } else {
             echo "<script>alert('Data penyewa gagal dihapus!');window.history.back();</script>";
