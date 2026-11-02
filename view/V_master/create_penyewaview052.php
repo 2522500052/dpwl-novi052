@@ -120,7 +120,7 @@
                                     <i class="fas fa-save"></i> Simpan
                                 </button>
 
-                                <a href="<?= base_url('Penyewa_C/index') ?>"
+                                <a href="<?= base_url('Penyewa_C052/index') ?>"
                                    class="btn btn-secondary">
                                     Kembali
                                 </a>

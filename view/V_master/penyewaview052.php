@@ -25,7 +25,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <a href="<?= base_url('Penyewa_C/create_penyewa') ?>"
+                <a href="<?= base_url('Penyewa_C052/create_penyewa') ?>"
                   class="btn btn-primary mb-3">Tambah Data</a>
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -45,12 +45,12 @@
                   <tbody>
                     <?php foreach ($datapenyewa as $m) : ?>
                       <tr>
-                        <td><?= $m['user_plg'] ?></td>
-                        <td><?= $m['sandi'] ?></td>
-                        <td><?= $m['nik'] ?></td>
-                        <td><?= $m['nm_lngkp'] ?></td>
-                        <td><?= $m['no_hp'] ?></td>
-                        <td><?= $m['almt_lngkp'] ?></td>
+                        <td><?= $m['user_plg052'] ?></td>
+                        <td><?= $m['Sandi052'] ?></td>
+                        <td><?= $m['Nik052'] ?></td>
+                        <td><?= $m['nm_lngkp052'] ?></td>
+                        <td><?= $m['no_hp052'] ?></td>
+                        <td><?= $m['almt_lngkp052'] ?></td>
                         <td>
                         <?php if (!empty($m['ft_ktp'])) : ?>
                             <img src="<?= base_url('img/' . $m['ft_ktp']) ?>"
@@ -73,8 +73,8 @@
                         <?php endif; ?>
                     </td>
                         <td>
-                          <a href="<?= base_url('Penyewa_C/edit/' . $m['user_plg']) ?>" class="btn btn-warning btn-sm">Edit</a>
-                          <a href="<?= base_url('Penyewa_C/hapus/' . $m['user_plg']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus penyewa ini?')">Hapus</a>
+                          <a href="<?= base_url('Penyewa_C052/edit/' . $m['user_plg052']) ?>" class="btn btn-warning btn-sm">Edit</a>
+                          <a href="<?= base_url('Penyewa_C052/hapus/' . $m['user_plg052']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus penyewa ini?')">Hapus</a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

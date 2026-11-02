@@ -1,5 +1,5 @@
 <?php
-class Penyewa_M extends Model
+class Penyewa_M052 extends Model
 {
     function datapenyewa()
     {
