@@ -1,3 +1,4 @@
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -6,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Starter Page Novi - Entri Data Penyewa</h1>
+                    <h1 class="m-0">Starter Page Novi - Edit Data Penyewa</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -16,7 +17,7 @@
                         <li class="breadcrumb-item">
                             <a href="<?= base_url('Penyewa_C/index') ?>">Data Penyewa</a>
                         </li>
-                        <li class="breadcrumb-item active">Entri Penyewa</li>
+                        <li class="breadcrumb-item active">Edit Penyewa</li>
                     </ol>
                 </div>
             </div>
@@ -31,7 +32,7 @@
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Form Entri Data Penyewa</h3>
+                            <h3 class="card-title">Form Edit Data Penyewa</h3>
                         </div>
 
                         <form action="<?= base_url('Penyewa_C/UpdatePenyewa') ?>"
@@ -78,23 +79,19 @@
                                     </div>
                                 </div>
 
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="no_hp">No. HP</label>
-                                            <input type="text" name="no_hp"
-                                                id="no_hp" class="form-control"
-                                                placeholder="Masukkan nomor hp"
-                                                value="<?= $penyewa['no_hp'] ?>" required>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="no_hp">No. HP</label>
+                                    <input type="text" name="no_hp"
+                                        id="no_hp" class="form-control"
+                                        placeholder="Masukkan nomor HP"
+                                        value="<?= $penyewa['no_hp'] ?>" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="almt_lngkp">Alamat Lengkap</label>
                                     <input type="text" name="almt_lngkp"
                                         id="almt_lngkp" class="form-control"
-                                        placeholder="Masukkan alamat  lengkap"
+                                        placeholder="Masukkan alamat lengkap"
                                         value="<?= $penyewa['almt_lngkp'] ?>" required>
                                 </div>
 
@@ -103,7 +100,8 @@
                                     <input type="file" name="ft_ktp"
                                         id="ft_ktp" class="form-control"
                                         accept="image/jpeg,image/png">
-                                    <input type="text" name="ft_ktp_asli" value="<?= $penyewa['ft_ktp'] ?>" hidden>
+                                    <input type="text" name="ft_ktp_asli"
+                                        value="<?= $penyewa['ft_ktp'] ?>" hidden>
                                 </div>
 
                                 <div class="form-group">
@@ -111,9 +109,11 @@
                                     <input type="file" name="ft_sim_a"
                                         id="ft_sim_a" class="form-control"
                                         accept="image/jpeg,image/png">
-                                    <input type="text" name="ft_sim_a_asli" value="<?= $penyewa['ft_sim_a'] ?>" hidden>
+                                    <input type="text" name="ft_sim_a_asli"
+                                        value="<?= $penyewa['ft_sim_a'] ?>" hidden>
                                 </div>
 
+                            </div>
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">
