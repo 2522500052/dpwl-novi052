@@ -23,7 +23,7 @@ public function simpan($data)
     $sql = $this->db->prepare("INSERT INTO penyewa (user_plg052,Sandi052,Nik052,nm_lngkp052,
     no_hp052,almt_lngkp052,ft_ktp,ft_sim_a) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
-    $sql->bind_param("ssiississsdss", $data['user_plg052'], $data['Sandi052'], $data['Nik052'], 
+    $sql->bind_param("ssssssss", $data['user_plg052'], $data['Sandi052'], $data['Nik052'], 
     $data['nm_lngkp052'], $data['no_hp052'], $data['almt_lngkp052'], $data['ft_ktp'], 
     $data['ft_sim_a']);
     return $sql->execute();
