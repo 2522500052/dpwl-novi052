@@ -25,7 +25,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <a href="<?= base_url('Penyewa_C052/create_penyewa057') ?>"
+                <a href="<?= base_url('Penyewa_C052/create_penyewa052') ?>"
                   class="btn btn-primary mb-3">Tambah Data</a>
                 <table class="table table-bordered table-striped">
                     <thead>
